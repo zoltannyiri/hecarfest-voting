@@ -11,9 +11,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class KezdolapComponent {
   options = [
-    { title: 'Szépvégverseny', isOpen: true, plate: '' },
-    { title: 'Opció 2', isOpen: true, plate: '' },
-    { title: 'Opció 3', isOpen: true, plate: '' }
+    { title: 'Legszebb autó', isOpen: true, plate: '' },
+    { title: 'Legmacsósabb autó', isOpen: true, plate: '' },
+    { title: 'Legcsajosabb autó', isOpen: true, plate: '' }
   ];
 
   toggleOption(index: number) {
