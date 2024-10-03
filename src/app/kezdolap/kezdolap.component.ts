@@ -11,9 +11,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class KezdolapComponent {
   options = [
-    { title: 'Legszebb autó', isOpen: true, plate: '' },
-    { title: 'Legmacsósabb autó', isOpen: true, plate: '' },
-    { title: 'Legcsajosabb autó', isOpen: true, plate: '' }
+    { title: 'Legszebb autó', id: '66fe967fdc782b1e24ede2b8', isOpen: true, plate: '' },
+    { title: 'Legmacsósabb autó', id: '66fe9694dc782b1e24ede2ba', isOpen: true, plate: '' },
+    { title: 'Legcsajosabb autó', id: '66fe969bdc782b1e24ede2bc', isOpen: true, plate: '' }
   ];
 
   toggleOption(index: number) {
@@ -22,6 +22,8 @@ export class KezdolapComponent {
 
   submit(index: number) {
     alert(`A beküldött rendszám az ${this.options[index].title} számára: ${this.options[index].plate}`);
-    this.options[index].isOpen = false; // Becsukja az opciót a küldés után
+    this.options[index].isOpen = false;
+    const body = JSON.stringify({car_code: this.options[index].plate})
+    fetch("http://localhost:8000/api/voting/"+this.options[index].id, {method: "POST", body: body, headers: { 'Content-Type': 'application/json' }})
   }
 }
