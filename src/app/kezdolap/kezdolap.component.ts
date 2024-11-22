@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-kezdolap',
   standalone: true,
-  imports: [KezdolapComponent, FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './kezdolap.component.html',
   styleUrl: './kezdolap.component.scss'
 })
